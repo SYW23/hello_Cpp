@@ -146,7 +146,7 @@
     <ClCompile Include="return_a.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="hello_world.h" />
+    <ClInclude Include="hello_Cpp.h" />
     <ClInclude Include="Sales_data.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

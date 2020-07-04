@@ -32,10 +32,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="hello_world.h">
+    <ClInclude Include="Sales_data.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Sales_data.h">
+    <ClInclude Include="hello_Cpp.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
