@@ -9,6 +9,7 @@ extern int return_a(int a);
 extern int chapter1to2(double b, int m, int l, int j);
 extern int chapter3();
 extern int chapter4();
+extern int chapter5();
 
 # endif
 
