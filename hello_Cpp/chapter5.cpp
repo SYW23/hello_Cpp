@@ -30,8 +30,31 @@ int chapter5()
                 break;
         }
     }
+    cin.clear();    // 对cin标志位进行复位
 
-    
+    // try语句块内声明的变量在块外部无法访问，尤其是在catch子句内也无法访问
+    int i, j;
+    cout << "请输入除数和被除数，以空格隔开：" << endl;
+    while (cin >> i >> j) {
+        try {
+            if (j == 0) {
+                throw runtime_error("除数不能为零！");
+            }
+            else {
+                cout << i / j << endl;
+            }
+        }
+        catch (runtime_error err) {
+            cout << err.what() << endl;
+            cout << "try again? y or n" << endl;
+            char t;
+            cin >> t;
+            if (!t || t == 'n') {
+                cout << "已退出" << endl;
+                break;
+            }
+        }
+    }
 
     system("pause");
     return 0;
