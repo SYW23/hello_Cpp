@@ -83,5 +83,37 @@ int chapter6()
     ++ptr;
     cout << *ptr << endl;
 
+    int x = 9;
+    int* const a = &x;
+    *a = 11;
+
+    // 函数重载
+    // 无法区分顶层const和没有顶层const的形参（本身是const，但指向的对象不一定是const）
+    // int look(int);
+    // int look(const int);    重复定义
+    // int look(int*);
+    // int look(int* const);    重复定义
+
+    // 可以区分底层const和没有底层const的形参（指向常量和非常量，区分明确）
+    // （虽然底层const也可指向非常量，复习：但不能通过底层const改变所指对象的值）
+    // int look(int&);
+    // int look(const int&);
+    // int look(int*);
+    // int look(const int *);
+
+    // 内联函数：声明前加上inline关键字，函数调用时在调用点上内联地展开，减小运行函数时的开销
+    // 适用情况：规模较小、调用频繁、流程直接
+
+    // constexpr函数：用于常量表达式，返回值和所有形参类型都必须是字面值类型，函数体中有且只有一条return语句
+    // constexpr函数被隐式地指定为内联函数
+    constexpr int c = cterfunc();
+    // 内联函数和constexpr函数通常定义在头文件里
+
+    // 
+    if (1)
+    {
+        cerr << "Error: " << __FILE__ << endl;
+    }
+
     return 0;
 }

@@ -5,8 +5,12 @@
 // 声明const常量j
 extern const int j;
 // 声明函数return_a
-extern int return_a(int a);
-extern int chapter1to2(double b, int m, int l, int j);
+extern int return_a( int a );
+// 定义constexpr函数
+constexpr int cterfunc() { return 42; }
+
+
+extern int chapter1to2( double b, int m, int l, int j );
 extern int chapter3();
 extern int chapter4();
 extern int chapter5();

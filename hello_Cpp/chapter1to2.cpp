@@ -56,6 +56,15 @@ int chapter1to2(double b, int m, int l, int j)
     cout << p2 << endl;
     // cout << *p2 << endl;    // 不能直接操作void*指针所指的对象，因其类型不确定
 
+    // 顶层和底层const
+    // 一个指针本身添加const限定符就是顶层const，而指针所指的对象添加const限定符就是底层const
+    // 但二者都可以指向非常量
+    const int* bp = &f;    // 底层const
+    int* const dp = &f;    // 顶层const
+    f = 10;    // 正确，所指对象本身非常量
+    // *bp = 11;    错误，不能通过底层const改变所指对象的值（即使所指对象本身非常量）
+    *dp = 12;    // 正确，可通过顶层const改变所指对象的值（所指对象本身非常量）
+
     // 变量的定义包含一个基本数据类型（如int）和一组声明符，而表示指针和引用的*和&其实是声明符的一部分
     int ii = 1024, * ppp = &ii, & rr = ii;    // 一条语句定义多类型的变量
     int* pp1, pp2;    // p1为指针变量，p2为int类型的变量
