@@ -115,5 +115,8 @@ int chapter6()
         cerr << "Error: " << __FILE__ << endl;
     }
 
+    cout << 3 / 2 << endl;
+    cout << -42 % 10 << endl;
+    cout << -42 / 10 << endl;
     return 0;
 }
