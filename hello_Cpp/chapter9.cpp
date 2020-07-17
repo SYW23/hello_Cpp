@@ -39,5 +39,18 @@ int chapter9()
 	// array初始化：必须指定元素类型和容器大小
 	array<int, 30> arr;
 
+	cout << v1.capacity() << endl;    // 现有空间不重新分配的话，能容纳10个元素
+	v1.reserve(20);    // 分配20个元素的空间
+	cout << v1.capacity() << endl;    // 20
+	v1.resize(5);
+	cout << v1.capacity() << endl;    // 20，resize不改变内存空间，只改变元素个数
+
+
+	string s1 = "Lebron James";
+	string s2 = s1.substr(6, 3);    // 第二个参数为从起始位置开始计数的长度，即拷贝结尾索引值为6+3-1=8 “ Ja”
+	string s3 = s1.substr(6, 100);    // 结尾如果超出范围，只拷贝到末尾，不会报错 “ James”
+	cout << s2 << endl;
+	cout << s3 << endl;
+
 	return 0;
 }
