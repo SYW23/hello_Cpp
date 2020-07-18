@@ -39,6 +39,9 @@
     <ClCompile Include="chapter9.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="chapter10.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sales_data.h">
