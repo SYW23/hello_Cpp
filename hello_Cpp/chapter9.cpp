@@ -47,10 +47,14 @@ int chapter9()
 
 
 	string s1 = "Lebron James";
-	string s2 = s1.substr(6, 3);    // 第二个参数为从起始位置开始计数的长度，即拷贝结尾索引值为6+3-1=8 “ Ja”
-	string s3 = s1.substr(6, 100);    // 结尾如果超出范围，只拷贝到末尾，不会报错 “ James”
-	cout << s2 << endl;
-	cout << s3 << endl;
+	string s2 = s1.substr(6, 3);    // 第二个参数为从起始位置开始计数的长度，即拷贝结尾索引值为6+3-1=8
+	string s3 = s1.substr(6, 100);    // 结尾如果超出范围，只拷贝到末尾，不会报错
+	string s4 = s1.substr(6);    // 无第二个参数，默认取至结尾
+	cout << s2 << endl;    // “ Ja”
+	cout << s3 << endl;    // “ James”
+	cout << s4 << endl;    // “ James”
+	s1.replace(6, 1, "gigigigigigigige");    // 6：删除起始位置 1:：删除子串长度 第三个参数：替换的子串
+	cout << s1 << endl;
 
 	return 0;
 }
