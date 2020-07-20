@@ -167,7 +167,7 @@ int chapter10()
 	//          bind(print, ref(os), _1, ' '));
 
 	cout << endl;
-	// inserter
+	// inserter 普通、前（总是在第一个元素前插入）、后（总是在最后一个元素后插入）
 	list<int> lst1 = { 1,2,3,4 };
 	list<int> lst2, lst3, lst4;
 
@@ -183,6 +183,37 @@ int chapter10()
 	for (auto& i : lst4)
 		cout << i << " ";
 	cout << endl;
+
+    // 输入输出流迭代器
+	/* istream_iterator<int> cin_iter(cin);
+	istream_iterator<int> endofcin;
+	vector<int> v10;
+	while (cin_iter != endofcin)
+	{
+		v10.push_back(*cin_iter++);
+	}
+	for (auto& i : v10)
+		cout << i << " ";
+	cout << endl; */
+
+	// 更精简版：用cin迭代器构造vector
+	/* istream_iterator<int> cin_iter2(cin), endofcin2;
+	vector<int> v11(cin_iter2, endofcin2);
+	for (auto& i : v11)
+		cout << i << " ";
+	cout << endl; */
+
+	// 动态求和
+	istream_iterator<int> cin_iter3(cin), endofcin3;
+	cout << accumulate(cin_iter3, endofcin3, 1) << endl;
+
+	// 反向迭代器转正向迭代器： reverse_interator的base成员
+	string s1 = "1,2,3";
+	// reverseComma为s1的反向迭代器，不能直接与s1.end()混用
+	auto reverseComma = find(s1.crbegin(), s1.crend(), ',');
+	// 对reverseComma进行base操作后其指向','的后一个元素
+	// 由于生成reverseComma使用的是cr，此处的s1.cend()是必须的，不能用s1.end()
+	cout << string(reverseComma.base(), s1.cend()) << endl;
 
 	return 0;
 }
