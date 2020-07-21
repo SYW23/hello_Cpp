@@ -1,3 +1,5 @@
+# include <string>
+using namespace std;
 # ifndef HELLO_WORLD_H
 # define HELLO_WORLD_H
 // 在头文件使用extern关键字声明对象，使该对象能在多个文件中被使用
@@ -8,7 +10,7 @@ extern const int j;
 extern int return_a( int a );
 // 定义constexpr函数
 constexpr int cterfunc() { return 42; }
-
+extern bool isShorter( const string s1, const string s2 );
 
 extern int chapter1to2( double b, int m, int l, int j );
 extern int chapter3();
@@ -17,6 +19,7 @@ extern int chapter5();
 extern int chapter6();
 extern int chapter9();
 extern int chapter10();
+extern int chapter11();
 
 # endif
 

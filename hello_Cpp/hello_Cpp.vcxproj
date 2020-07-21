@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="chapter10.cpp" />
+    <ClCompile Include="chapter11.cpp" />
     <ClCompile Include="chapter1to2.cpp" />
     <ClCompile Include="chapter3.cpp" />
     <ClCompile Include="chapter4.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="chapter6.cpp" />
     <ClCompile Include="chapter9.cpp" />
     <ClCompile Include="hello_Cpp.cpp" />
+    <ClCompile Include="isShorter.cpp" />
     <ClCompile Include="return_a.cpp" />
   </ItemGroup>
   <ItemGroup>

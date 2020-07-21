@@ -35,11 +35,6 @@ void fc2()
 	cout << f() << endl;
 }
 
-bool isShorter(const string s1, const string s2)
-{
-	return s1.length() < s2.length();
-}
-
 int chapter10()
 {
 	vector<int> v1 = { 1,2,3,4,5,6,7,8,9 };
