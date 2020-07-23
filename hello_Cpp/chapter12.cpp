@@ -36,5 +36,35 @@ int chapter12()
 	shared_ptr<int> spi(new int(7));
 	// 不能用shared_ptr<int> spi = new int(7)隐式初始化智能指针
 
+	// 动态数组，指针为数组元素类型（非数组类型）
+	int* pia = new int[10]();    // 值初始化
+	string* psa = new string[10]{ "x", "y", "z" };    // 列表初始化
+	char* pa = new char[0];    // 创建一个大小为0的空动态数组是合法的（静态情况下非法），返回指针类似于尾后指针
+	// 动态数组的释放，逆序销毁
+	delete[] pia;
+	delete[] psa;
+	delete[] pa;
+
+	// allocator 分离内存分配和对象构造操作
+	int n = 9;
+	allocator<string> alloc;    // 第一步：定义allocator对象
+	auto const p = alloc.allocate(n);    // 第二步：分配n个未初始化的string
+	// 第三步：分配未构造的内存
+	auto q = p;
+	alloc.construct(q++);    // *q为空字符串
+	alloc.construct(q++, 10, 'c');    // *q为cccccccccc
+	alloc.construct(q++,"LBJ");    // *q为LBJ
+	// q总是指向最后构造的元素之后的位置
+	// 第四步：用完对象后的销毁
+	while (q != p)
+	{
+		alloc.destroy(--q);
+	}
+	// 第五步：最后释放内存
+	alloc.deallocate(p, n);    // 此处的n必须和调用allocate时提供的参数大小一致
+
+
+
+
 	return 0;
 }
