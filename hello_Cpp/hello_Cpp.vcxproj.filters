@@ -51,6 +51,9 @@
     <ClCompile Include="chapter12.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="chapter13.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sales_data.h">

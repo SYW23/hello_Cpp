@@ -21,6 +21,7 @@ extern int chapter9();
 extern int chapter10();
 extern int chapter11();
 extern int chapter12();
+extern int chapter13();
 
 # endif
 
